@@ -4,11 +4,32 @@ class Header extends PureComponent {
 
     render() {
         return (
-            <>
-                <a href='/' className='bg-red-500 text-lg'>Главная </a>
-                <a href='/blog' className='bg-red-500 text-lg'>Блог </a>
-                <a href='/about' className='bg-red-500 text-lg'> О нас </a>
-            </>
+            <header class="bg-white shadow-sm">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <div class="text-lg font-semibold">
+            <a href="/">SiteName</a>
+        </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li>
+                    <a href="/" class="text-gray-700 hover:text-blue-500">Главная</a>
+                </li>
+                <li>
+                    <a href="/catalog" class="text-gray-700 hover:text-blue-500">Каталог</a>
+                </li>
+                <li>
+                    <a href="/about" class="text-gray-700 hover:text-blue-500">О нас</a>
+                </li>
+                <li>
+                    <a href="/account" class="text-gray-700 hover:text-blue-500">Личный кабинет</a>
+                </li>
+                <li>
+                    <a href="/cart" class="text-gray-700 hover:text-blue-500">Корзина</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
             
         )
     }

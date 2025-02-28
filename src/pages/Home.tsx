@@ -37,6 +37,7 @@ class Home extends PureComponent<Props, State> {
             
             <p>Спасибо, что выбрали нас! </p>
             <p>Ваш комфорт – наша забота!</p></div>
+            
         )
     }
 }
