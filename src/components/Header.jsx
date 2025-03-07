@@ -11,19 +11,19 @@ class Header extends PureComponent {
         <nav>
             <ul class="flex space-x-6">
                 <li>
-                    <a href="/" class="text-gray-700 hover:text-blue-500">Главная</a>
+                    <a href="/" class="text-blue-500">Главная</a>
                 </li>
                 <li>
-                    <a href="/catalog" class="text-gray-700 hover:text-blue-500">Каталог</a>
+                    <a href="/catalog" class="text-blue-500">Каталог</a>
                 </li>
                 <li>
-                    <a href="/about" class="text-gray-700 hover:text-blue-500">О нас</a>
+                    <a href="/about" class="text-blue-500">О нас</a>
                 </li>
                 <li>
-                    <a href="/account" class="text-gray-700 hover:text-blue-500">Личный кабинет</a>
+                    <a href="/account" class="text-blue-500">Личный кабинет</a>
                 </li>
                 <li>
-                    <a href="/cart" class="text-gray-700 hover:text-blue-500">Корзина</a>
+                    <a href="/cart" class="text-blue-500">Корзина</a>
                 </li>
             </ul>
         </nav>

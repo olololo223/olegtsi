@@ -9,22 +9,21 @@ export const Text = (props) => {
         small: "text-sm",
         medium: "text-base",
         large: "text-lg",
-        xlarge: "text-xl",
     },
     colors: {
-        primary: "text-blue-900",
-        secondary: "text-blue-600"
+        primary: "text-blue-500",
+        secondary: "text-blue-300"
     },
     aligns: {
         left: "text-left",
         center: "text-center",
         right: "text-right",
     }
-  };
-  console.log(color, classes.colors[color]);
-  
+  };  
   return (
-    <p className={`${defaultClass} ${classes.sizes[size]} ${classes.colors[color]} ${classes.aligns[align]}`}>
+    <p className=
+      {`${defaultClass} ${classes.sizes[size]} ${classes.colors[color]} ${classes.aligns[align]}`
+    }>
       {title}
     </p>
   );

@@ -15,7 +15,7 @@ function App() {
     <Header/>
     <Button size="medium" color="primary" title="Принять" />
     <Text size="large" color="primary" align="center" title="Hello, world!"/>
-    <Input size="medium" borderColor="primary" placeholder="Hello"/>
+    <Input size="large" borderColor="primary" placeholder="Hello"/>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
