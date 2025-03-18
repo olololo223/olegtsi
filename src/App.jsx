@@ -5,17 +5,19 @@ import About from './pages/About';
 import './App.css'
 import Footer from './components/Footer';
 import Blog from './pages/Blog';
-import { Button } from './pages/Button';
-import { Text } from './pages/Text';
-import { Input } from './pages/Input';
+import { Button } from './components/Button';
+import { Text } from './components/Text';
+import { Input } from './components/Input';
+import { AddingProduct } from './components/AddingProduct';
 
 function App() {
   return (
     <>
     <Header/>
-    <Button size="medium" color="primary" title="Принять" />
+    <Button size="medium" color="primary" title="Принять" onClick={()=>alert("hello")}/>
     <Text size="large" color="primary" align="center" title="Hello, world!"/>
     <Input size="large" borderColor="primary" placeholder="Hello"/>
+    <AddingProduct/>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
