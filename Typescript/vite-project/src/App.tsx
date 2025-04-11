@@ -9,6 +9,7 @@ import { Button } from './components/Button';
 import { Text } from './components/Text';
 import { Input } from './components/Input';
 import { AddingProduct } from './components/AddingProduct';
+import Message from './pages/Message';
 
 function App() {
   return (
@@ -18,11 +19,13 @@ function App() {
     <Text size="large" color="primary" align="center" title="Hello, world!"/>
     <Input size="large" borderColor="primary" placeholder="Hello"/>
     <AddingProduct/>
+    <a href='/message'>Ссылка на /message</a>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/blog' element={<Blog/>}/>
+      <Route path='/message' element={<Message/>}/>
     </Routes>
     </BrowserRouter>
     <Footer/>
