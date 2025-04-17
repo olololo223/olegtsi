@@ -19,7 +19,7 @@ function App() {
     <Text size="large" color="primary" align="center" title="Hello, world!"/>
     <Input size="large" borderColor="primary" placeholder="Hello"/>
     <AddingProduct/>
-    <a href='/message'>Ссылка на /message</a>
+    <a className='text-lg text-blue-500 text-center' href='/message'>Ссылка на /message</a>
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home/>}/>

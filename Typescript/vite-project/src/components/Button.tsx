@@ -1,9 +1,15 @@
 import React from "react";
-export const Button = (props) => {
+
+interface ButtonProps {
+  size: "small" | "medium" | "large";
+  color: "primary" | "secondary";
+  title: string;
+  onClick: () => void;
+}
+
+export const Button: React.FC<ButtonProps> = (props) => {
   const { size, color, title, onClick } = props;
-  // класс по умолчанию
-  const defaultClass =
-    "flex items-center rounded-2 h-[40px] w-[max-content] px-4 py-2";
+  const defaultClass = "flex items-center rounded-2 h-[40px] w-[max-content] px-4 py-2";
 
   const classes = {
     colors: {
@@ -26,8 +32,9 @@ export const Button = (props) => {
   return (
     <button
       className={
-        defaultClass + " " + classes.sizes[size] + " " + classes.colors[color].button 
-        } onClick={onClick}
+        `${defaultClass} ${classes.sizes[size]} ${classes.colors[color].button}`
+      }
+      onClick={onClick}
     >
       <div className={classes.colors[color].text}>
         {title}

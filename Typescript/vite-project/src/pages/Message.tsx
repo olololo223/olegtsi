@@ -1,40 +1,51 @@
 import { useState, useEffect } from 'react';
 
+interface ApiData {
+    message: string;
+    title: string;
+}
+
 const Message = () => {
-  const [data, setData] = useState<{ message: string; title: string } | null>(null);
-  const [loading, setLoading] = useState(true);
+    const [data, setData] = useState<ApiData | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/data");
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error("Error: ", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/api/data");
+                const result: ApiData = await response.json();
+                setData(result);
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'Неизвестная ошибка');
+                console.error("Error: ", err);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    fetchData();
-  }, []);
+        fetchData();
+    }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    if (loading) {
+        return <div>Загрузка...</div>;
+    }
 
-  if (!data) {
-    return null;
-  }
+    if (error) {
+        return <div>Ошибка: {error}</div>;
+    }
 
-  return (
-    <div>
-        <h1>Данные:</h1>
-        <h2>{data.title}</h2>
-        <h2>{data.message}</h2>
-    </div>
-  );
+    if (!data) {
+        return <div>Нет данных</div>;
+    }
+
+    return (
+        <div>
+            <h1>Данные:</h1>
+            <h2>{data.title}</h2>
+            <p>{data.message}</p>
+        </div>
+    );
 };
 
 export default Message;

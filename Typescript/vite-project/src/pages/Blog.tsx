@@ -1,22 +1,16 @@
-import React, { PureComponent, ReactNode } from 'react'
+import { PureComponent, ReactNode } from 'react';
 
 interface Props {}
 interface State {}
 
 class Blog extends PureComponent<Props, State> {
-    constructor(props: Props) {
-        super(props)
-
-        this.state = {
-            
-        }
-    }
-
     render(): ReactNode {
         return (
-            <h1>Blog</h1>
-        )
+            <div>
+                <h1>Blog</h1>
+            </div>
+        );
     }
 }
 
-export default Blog
+export default Blog;
