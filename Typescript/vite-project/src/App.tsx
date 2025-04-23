@@ -19,7 +19,7 @@ function App() {
     <Text size="large" color="primary" align="center" title="Hello, world!"/>
     <Input size="large" borderColor="primary" placeholder="Hello"/>
     <AddingProduct/>
-    <Text size='large' color='primary' align='center' title='ДАННЫЕ СЕРВЕРА В /message'/>
+    <Text size='large' color='primary' align='center' title='ДАННЫЕ СЕРВЕРА(GET-ЗАПРОС) В /message'/>
     <a className='text-lg text-blue-500 text-center' href='/message'>Ссылка на /message</a>
     <BrowserRouter>
     <Routes>

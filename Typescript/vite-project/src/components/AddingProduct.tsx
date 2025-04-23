@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
+import axios from "axios";
 
 interface Product {
   title: string;
@@ -16,15 +17,36 @@ export const AddingProduct: React.FC = () => {
     price: "" 
   });
 
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/data");
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Ошибка при загрузке продуктов:", error);
+      }
+    };
+    fetchProducts();
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setNewProduct({ ...newProduct, [name]: value });
   };
 
-  const handleAddProduct = () => {
-    setProducts([...products, newProduct]);
-    setIsModalOpen(false);
-    setNewProduct({ title: "", description: "", price: "" });
+  const handleAddProduct = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/data",
+        newProduct
+      );
+      
+      setProducts([...products, response.data]);
+      setIsModalOpen(false);
+      setNewProduct({ title: "", description: "", price: "" });
+    } catch (error) {
+      console.error("Ошибка при добавлении продукта:", error);
+    }
   };
 
   return (

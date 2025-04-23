@@ -1,19 +1,28 @@
-// const express = require('express');
 import express from "express";
 import cors from "cors";
+
 const app = express();
-const port = 5000;
+const PORT = 5000;
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); 
+app.use(express.json()); 
 
-//Метод GET
+// Массив для хранения продуктов
+let products = [];
+
+// Метод GET для получения всех продуктов
 app.get("/api/data", (req, res) => {
-  res.json({ message: "Hello from server!", title: "Яблоко" });
+  res.json(products);
 });
 
-//http://localhost:5000/api/data
+// Метод POST для добавления нового продукта
+app.post('/api/data', (req, res) => {
+  const newProduct = req.body;
+  products.push(newProduct); // Сохраняем продукт в массив
+  res.status(201).json(newProduct); // Отправляем ответ с новым продуктом
+});
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+// Запуск сервера
+app.listen(PORT, () => {
+  console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
