@@ -10,8 +10,8 @@ class About extends PureComponent<Props, State> {
             <div>
                 <Helmet>
                     <title>About</title>
-                    <meta name="description" content="Страница About нашего интернет-магазина" />
-                    <meta name="keywords" content="О нас, информация, контакты, SEO" />
+                    <meta name="description" content="Страница About интернет-магазина" />
+                    <meta name="keywords" content="о нас, информация, контакты, SEO" />
                 </Helmet>
                 <h1>About</h1>
             </div>

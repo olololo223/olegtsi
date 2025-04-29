@@ -11,7 +11,7 @@ class Home extends PureComponent<Props, State> {
             <Helmet>
                     <title>Home</title>
                     <meta name="description" content="Главная страница интернет-магазина" />
-                    <meta name="keywords" content="интернет магазин, покупки, доставка, скидки, акции" />
+                    <meta name="keywords" content="интернет-магазин, покупки, скидки, акции" />
             </Helmet>
             <div>
                 <h1>Добро пожаловать в наш интернет-магазин!</h1>

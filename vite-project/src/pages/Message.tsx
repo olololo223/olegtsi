@@ -45,6 +45,7 @@ const Message = () => {
         <Helmet>
             <title>{data.title}</title>
             <meta name="description" content={data.message} />
+            <meta name="keywords" content="данные, сервер, информация" />        
         </Helmet>
         <div>
             <h1>Данные:</h1>
