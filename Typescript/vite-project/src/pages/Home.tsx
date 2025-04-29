@@ -1,4 +1,5 @@
 import { PureComponent, ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
 
 interface Props {}
 interface State {}
@@ -6,6 +7,12 @@ interface State {}
 class Home extends PureComponent<Props, State> {
     render(): ReactNode {
         return (
+            <>
+            <Helmet>
+                    <title>Home</title>
+                    <meta name="description" content="Главная страница интернет-магазина" />
+                    <meta name="keywords" content="интернет магазин, покупки, доставка, скидки, акции" />
+            </Helmet>
             <div>
                 <h1>Добро пожаловать в наш интернет-магазин!</h1>
                 <p>Мы рады приветствовать вас на виртуальных полках нашего магазина, где вы найдете всё, что нужно для комфортной жизни, стиля и вдохновения. У нас представлен широкий ассортимент товаров: от модной одежды и аксессуаров до современной электроники и товаров для дома.</p>
@@ -27,6 +34,7 @@ class Home extends PureComponent<Props, State> {
                 <p>Спасибо, что выбрали нас!</p>
                 <p>Ваш комфорт – наша забота!</p>
             </div>
+            </>
         );
     }
 }

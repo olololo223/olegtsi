@@ -1,4 +1,5 @@
 import { PureComponent, ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
 
 interface Props {}
 interface State {}
@@ -7,6 +8,11 @@ class About extends PureComponent<Props, State> {
     render(): ReactNode {
         return (
             <div>
+                <Helmet>
+                    <title>About</title>
+                    <meta name="description" content="Страница About нашего интернет-магазина" />
+                    <meta name="keywords" content="О нас, информация, контакты, SEO" />
+                </Helmet>
                 <h1>About</h1>
             </div>
         );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 interface ApiData {
     message: string;
@@ -40,11 +41,17 @@ const Message = () => {
     }
 
     return (
+        <>
+        <Helmet>
+            <title>{data.title}</title>
+            <meta name="description" content={data.message} />
+        </Helmet>
         <div>
             <h1>Данные:</h1>
             <h2>{data.title}</h2>
             <p>{data.message}</p>
         </div>
+        </>
     );
 };
 
