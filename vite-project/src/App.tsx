@@ -10,6 +10,7 @@ import { Text } from './components/Text';
 import { Input } from './components/Input';
 import { AddingProduct } from './components/AddingProduct';
 import Message from './pages/Message';
+import AuthPage from './pages/AuthPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Route path='/about' element={<About/>}/>
       <Route path='/blog' element={<Blog/>}/>
       <Route path='/message' element={<Message/>}/>
+      <Route path='/auth' element={<AuthPage/>}/>
     </Routes>
     </BrowserRouter>
     <Footer/>
